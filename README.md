@@ -33,7 +33,6 @@
 + TikTok
 + Reddit
 + Pinterest
-+ ВКонтакте
 + Однокласники
 + Deviantart
 + Github
