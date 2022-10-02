@@ -5,14 +5,6 @@
 
 ![image](https://github.com/Jupiter404E/User-finder/blob/main/img/user_finder.png?raw=true)
 
-## Демонстрация
-
-![image]( )
-
-## Информация
-
-Загрузите последнюю версию [chromedriver](https://chromedriver.chromium.org/downloads "link chromedriver") и замените старый файл `chromedriver.exe` новым. Если вы столкнулись с какими-либо ошибками, прокрутите вниз, чтобы узнать больше об устранении неполадок.
-
 ## Применение
 
 1. Если у вас не установлен python, загрузите python 3.7.6 и убедитесь, что вы выбрали опцию 'ADD TO PATH' во время установки.
