@@ -1,29 +1,29 @@
 # User Finder v1.0
 
-Скрипт на Python, который позволяет найти человека в социальных сетях и прочих комуникабельных сайтах.
-В зависимости от вашей страны и региона проживания, некоторые показания могут работать не корректно!
+A Python script that allows you to find a person in social networks and communities of communicative sites.
+Depending on your country and region of residence, the recommendations do not work correctly!
 
 ![image](https://github.com/Jupiter404E/User-finder/blob/main/img/user_finder.png?raw=true)
 
-## Применение
+## Usage
 
-1. Если у вас не установлен python, загрузите python 3.7.6 и убедитесь, что вы выбрали опцию 'ADD TO PATH' во время установки.
+1. If you don't have python installed, download python 3.7.6 and make sure you select the 'ADD TO PATH' option during installation.
 
-2. Установите необходимые модули > `pip install -r requirements.txt` или дважды щелкните по `pip_install_requirements.bat`
+2. install required modules > `pip install -r requirements.txt` or select by `pip_install_requirements.bat`
 
-3. Введите `python user_finder.py` в cmd для запуска или дважды щелкните по `start.bat`
+3. Введите `python user_finder.py` в cmd для запуска или дважды щелкните `start.bat`
 
-4. В консоль введите-user name пользователя которого хотите найти.
-## Обозначения
+4. In the console, enter the user-name of the user you want to find.
+## Notation
 
-`[+]` - Аккаунт найден. <br />
-`[-]` - Аккаунт не найден. <br />
-`[x]` - Сайт запретил доступ коду. <br />
-`[e]` - Произошла ошибка при подключению к сайту. <br />
-`[d]` - Аккаунт был удалён. <br />
-`[\]` - Информация.
+`[+]` - Account found. <br />
+`[-]` - Account not found. <br />
+`[x]` - The site denied access to the code. <br />
+`[e]` - An error occurred connecting to the site. <br />
+`[d]` - The account has been deleted. <br />
+`[\]` - Information.
 
-## Доступные для поиска социальные сети:
+## Available sites to search for a person:
 
 + Instagram
 + Facebook
