@@ -30,7 +30,6 @@ Depending on your country and region of residence, the recommendations do not wo
 + YouTube
 + Twitch
 + Twitter
-+ TikTok
 + Reddit
 + Pinterest
 + Однокласники
