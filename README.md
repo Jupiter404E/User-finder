@@ -1,4 +1,4 @@
-# User Finder v1.0
+# User Finder v1.2
 
 A Python script that allows you to find a person in social networks and communities of communicative sites.
 Depending on your country and region of residence, the recommendations do not work correctly!
