@@ -3,7 +3,7 @@
 A Python script that allows you to find a person in social networks and communities of communicative sites.
 Depending on your country and region of residence, the recommendations do not work correctly!
 
-![image](https://github.com/Jupiter404E/User-finder/blob/main/img/user_finder.png?raw=true)
+![image](https://github.com/Jupiter404E/User-finder/blob/main/img/preview.png?raw=true)
 
 ## Usage
 
