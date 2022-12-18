@@ -4,7 +4,7 @@ from banner import BANNER
 from colorama import Fore, Style, Back, init
 init()
 
-class userFidner():
+class userFidner:
     def __init__(self) -> None:
         print(BANNER + Fore.CYAN)
         self.args = input("\n[→] Имя пользователя: ")
