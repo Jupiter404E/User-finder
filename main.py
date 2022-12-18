@@ -10,7 +10,6 @@ class userFidner:
         self.args = input("\n[→] Имя пользователя: ")
 
     def Finder(self):
-
         file = open(f"cache\{self.args}.txt", "w")
 
             ## INSTAGRAM
