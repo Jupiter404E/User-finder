@@ -7,432 +7,520 @@ init()
 class userFidner:
     def __init__(self) -> None:
         print(BANNER + Fore.CYAN)
-        self.args = input("\n[→] Имя пользователя: ")
+        self.args = input("\n[→] Username: ")
 
     def Finder(self):
         file = open(f"cache\{self.args}.txt", "w")
 
-            ## INSTAGRAM
+            ###################
+            ##               ##
+            ##   INSTAGRAM   ##
+            ## ↓           ↓ ##
+            ###################
 
         check_Instagram = f"https://www.instagram.com/{self.args}/"
     
         try:
             response = requests.head(check_Instagram)
             if response.status_code == 200:
-                print(Fore.GREEN + f"[+] Instagram: аккаунт найден! " + check_Instagram)
+                print(Fore.GREEN + f"[+] Instagram: account found! " + check_Instagram)
             file.write("Instagram: " + check_Instagram + "\n")
             if response.status_code == 404:
-                print(Fore.YELLOW + "[-] Instagram: аккаунт не найден!")
+                print(Fore.YELLOW + "[-] Instagram: account not found!")
             if response.status_code == 301:
-                print(Fore.YELLOW + "[d] Instagram: аккаунт удалён!")
+                print(Fore.YELLOW + "[d] Instagram: account deleted!")
             if response.status_code == 403:
-                print(Fore.RED + "[x] Instagram: доступ запрещён!")
+                print(Fore.RED + "[x] Instagram: access is denied!")
 
         except requests.ConnectionError:
-            print(Fore.RED + "[e] Instagram: произошла ошибка")
+            print(Fore.RED + "[e] Instagram: an error has occurred!")
 
-            ## FACEBOOK
+            ##################
+            ##              ##
+            ##   FACEBOOK   ##
+            ## ↓          ↓ ##
+            ##################
     
         check_Facebook = f"https://www.facebook.com/{self.args}/"
 
         try:
             response = requests.head(check_Facebook)
             if response.status_code == 200:
-                print(Fore.GREEN + f"[+] Facebook: аккаунт найден! " + check_Facebook)
+                print(Fore.GREEN + f"[+] Facebook: account found! " + check_Facebook)
                 file.write("Facebook: " + check_Facebook + "\n")
             if response.status_code == 404:
-                print(Fore.YELLOW + "[-] Facebook: аккаунт не найден!")
+                print(Fore.YELLOW + "[-] Facebook: account not found!")
             if response.status_code == 301:
-                print(Fore.YELLOW + "[d] Facebook: аккаунт удалён!")
+                print(Fore.YELLOW + "[d] Facebook: account deleted!")
             if response.status_code == 403:
-                print(Fore.RED + "[x] Facebook: доступ запрещён!")
+                print(Fore.RED + "[x] Facebook: access is denied!")
 
         except requests.ConnectionError:
-            print(Fore.RED + "[e] Facebook: произошла ошибка")
+            print(Fore.RED + "[e] Facebook: an error has occurred!")
 
-            ## YOUTUBE
+            ###################
+            ##               ##
+            ##    YOUTUBE    ##
+            ## ↓           ↓ ##
+            ###################
 
         check_Youtube = f"https://www.youtube.com/{self.args}/"
 
         try:
             response = requests.head(check_Youtube)
             if response.status_code == 200:
-                print(Fore.GREEN + f"[+] YouTube: аккаунт найден! " + check_Youtube)
+                print(Fore.GREEN + f"[+] YouTube: account found! " + check_Youtube)
                 file.write("YouTube: " + check_Youtube + "\n")
             if response.status_code == 404:
-                print(Fore.YELLOW + "[-] YouTube: аккаунт не найден!")
+                print(Fore.YELLOW + "[-] YouTube: account not found!")
             if response.status_code == 301:
-                print(Fore.YELLOW + "[d] YouTube: аккаунт удалён!")
+                print(Fore.YELLOW + "[d] YouTube: account deleted!")
             if response.status_code == 403:
-                print(Fore.RED + "[x] YouTube: доступ запрещён!")
+                print(Fore.RED + "[x] YouTube: access is denied!")
 
         except requests.ConnectionError:
-            print(Fore.RED + "[e] YouTube: произошла ошибка")
+            print(Fore.RED + "[e] YouTube: an error has occurred!")
 
-            ## TWITCH
+            ##################
+            ##              ##
+            ##    TWITCH    ##
+            ## ↓          ↓ ##
+            ##################
 
         check_Twitch = f"https://www.twitch.tv/{self.args}/"
 
         try:
             response = requests.head(check_Twitch)
             if response.status_code == 200:
-                print(Fore.GREEN + f"[+] Twitch: аккаунт найден! " + check_Twitch)
+                print(Fore.GREEN + f"[+] Twitch: account found! " + check_Twitch)
                 file.write("Twitch: " + check_Twitch + "\n")
             if response.status_code == 404:
-                print(Fore.YELLOW + "[-] Twitch: аккаунт не найден!")
+                print(Fore.YELLOW + "[-] Twitch: account not found!")
             if response.status_code == 301:
-                print(Fore.YELLOW + "[d] Twitch: аккаунт удалён!")
+                print(Fore.YELLOW + "[d] Twitch: account deleted!")
             if response.status_code == 403:
-                print(Fore.RED + "[x] Twitch: доступ запрещён!")
+                print(Fore.RED + "[x] Twitch: access is denied!")
 
         except requests.ConnectionError:
-            print(Fore.RED + "[e] Twitch: произошла ошибка")
+            print(Fore.RED + "[e] Twitch: an error has occurred!")
 
-            ## TWITTER
+            ###################
+            ##               ##
+            ##    TWITTER    ##
+            ## ↓           ↓ ##
+            ###################
 
         check_Twitter = f"https://twitter.com/{self.args}/"
 
         try:
             response = requests.head(check_Twitter)
             if response.status_code == 200:
-                print(Fore.GREEN + f"[+] Twitter: аккаунт найден! " + check_Twitter)
+                print(Fore.GREEN + f"[+] Twitter: account found! " + check_Twitter)
                 file.write("Twitter: " + check_Twitter + "\n")
             if response.status_code == 404:
-                print(Fore.YELLOW + "[-] Twitter: аккаунт не найден!")
+                print(Fore.YELLOW + "[-] Twitter: account not found!")
             if response.status_code == 301:
-                print(Fore.YELLOW + "[d] Twitter: аккаунт удалён!")
+                print(Fore.YELLOW + "[d] Twitter: account deleted!")
             if response.status_code == 403:
-                print(Fore.RED + "[x] Twitter: доступ запрещён!")
+                print(Fore.RED + "[x] Twitter: access is denied!")
 
         except requests.ConnectionError:
-            print(Fore.RED + "[e] Twitter: произошла ошибка")
+            print(Fore.RED + "[e] Twitter: an error has occurred!")
 
-            ## REDDIT
+            ##################
+            ##              ##
+            ##    REDDIT    ##
+            ## ↓          ↓ ##
+            ##################
 
         check_Reddit = f"https://www.reddit.com/user/{self.args}/"
 
         try:
             response = requests.head(check_Reddit)
             if response.status_code == 200:
-                print(Fore.GREEN + f"[+] Reddit: аккаунт найден! " + check_Reddit)
+                print(Fore.GREEN + f"[+] Reddit: account found! " + check_Reddit)
                 file.write("Reddit: " + check_Reddit + "\n")
             if response.status_code == 502 or 404:
-                print(Fore.YELLOW + "[-] Reddit: аккаунт не найден!")
+                print(Fore.YELLOW + "[-] Reddit: account not found!")
             if response.status_code == 301:
-                print(Fore.YELLOW + "[d] Reddit: аккаунт удалён!")
+                print(Fore.YELLOW + "[d] Reddit: account deleted!")
             if response.status_code == 403:
-                print(Fore.RED + "[x] Reddit: доступ запрещён!")
+                print(Fore.RED + "[x] Reddit: access is denied!")
 
         except requests.ConnectionError:
-            print(Fore.RED + "[e] Reddit: произошла ошибка")
+            print(Fore.RED + "[e] Reddit: an error has occurred!")
 
-            ## PINTEREST
+            ###################
+            ##               ##
+            ##   PINTEREST   ##
+            ## ↓           ↓ ##
+            ###################
 
         check_Pinterest = f"https://www.pinterest.ca/{self.args}/"
 
         try:
             response = requests.head(check_Pinterest)
             if response.status_code == 200:
-                print(Fore.GREEN + f"[+] Pinterest: аккаунт найден! " + check_Pinterest)
+                print(Fore.GREEN + f"[+] Pinterest: account found! " + check_Pinterest)
                 file.write("Pinterest: " + check_Pinterest + "\n")
             if response.status_code == 404:
-                print(Fore.YELLOW + "[-] Pinterest: аккаунт не найден!")
+                print(Fore.YELLOW + "[-] Pinterest: account not found!")
             if response.status_code == 301:
-                print(Fore.YELLOW + "[d] Pinterest: аккаунт удалён!")
+                print(Fore.YELLOW + "[d] Pinterest: account deleted!")
             if response.status_code == 403:
-                print(Fore.RED + "[x] Pinterest: доступ запрещён!")
+                print(Fore.RED + "[x] Pinterest: access is denied!")
 
         except requests.ConnectionError:
-            print(Fore.RED + "[e] Pinterest: произошла ошибка")
+            print(Fore.RED + "[e] Pinterest: an error has occurred!")
 
-            ## ОДНОКЛАСНИКИ
+            ####################
+            ##                ##
+            ##  ОДНОКЛАСНИКИ  ##
+            ## ↓            ↓ ##
+            ####################
 
         check_ok = f"https://ok.ru/{self.args}/"
 
         try:
             response = requests.head(check_ok)
             if response.status_code == 200:
-                print(Fore.GREEN + f"[+] Однокласники: аккаунт найден! " + check_ok)
+                print(Fore.GREEN + f"[+] Однокласники: account found! " + check_ok)
                 file.write("Однокласники: " + check_ok + "\n")
             if response.status_code == 404:
-                print(Fore.YELLOW + "[-] Однокласники: аккаунт не найден!")
+                print(Fore.YELLOW + "[-] Однокласники: account not found!")
             if response.status_code == 301:
-                print(Fore.YELLOW + "[d] Однокласники: аккаунт удалён!")
+                print(Fore.YELLOW + "[d] Однокласники: account deleted!")
             if response.status_code == 403:
-                print(Fore.RED + "[x] Однокласники: доступ запрещён!")
+                print(Fore.RED + "[x] Однокласники: access is denied!")
 
         except requests.ConnectionError:
-            print(Fore.RED + "[e] Однокласники: произошла ошибка")
+            print(Fore.RED + "[e] Однокласники: an error has occurred!")
 
-            ## DEVIANTART
+            ##################
+            ##              ##
+            ##  DEVIANTART  ##
+            ## ↓          ↓ ##
+            ##################
 
         check_Deviantart = f"https://www.deviantart.com/{self.args}/"
         
         try:
             response = requests.head(check_Deviantart)
             if response.status_code == 200:
-                print(Fore.GREEN + f"[+] Deviantart: аккаунт найден! " + check_Deviantart)
+                print(Fore.GREEN + f"[+] Deviantart: account found! " + check_Deviantart)
                 file.write("Deviantart: " + check_Deviantart + "\n")
             if response.status_code == 404:
-                print(Fore.YELLOW + "[-] Deviantart: аккаунт не найден!")
+                print(Fore.YELLOW + "[-] Deviantart: account not found!")
             if response.status_code == 301:
-                print(Fore.YELLOW + "[d] Deviantart: аккаунт удалён!")
+                print(Fore.YELLOW + "[d] Deviantart: account deleted!")
             if response.status_code == 403:
-                print(Fore.RED + "[x] Deviantart: доступ запрещён!")
+                print(Fore.RED + "[x] Deviantart: access is denied!")
 
         except requests.ConnectionError:
-            print(Fore.RED + "[e] Deviantart: произошла ошибка")
+            print(Fore.RED + "[e] Deviantart: an error has occurred!")
 
-            ## GITHUB
+            ##################
+            ##              ##
+            ##    GITHUB    ##
+            ## ↓          ↓ ##
+            ##################
 
         check_Github = f"https://github.com/{self.args}/"
 
         try:
             response = requests.head(check_Github)
             if response.status_code == 200:
-                print(Fore.GREEN + f"[+] Github: аккаунт найден! " + check_Github)
+                print(Fore.GREEN + f"[+] Github: account found! " + check_Github)
                 file.write("Github: " + check_Github + "\n")
             if response.status_code == 404:
-                print(Fore.YELLOW + "[-] Github: аккаунт не найден!")
+                print(Fore.YELLOW + "[-] Github: account not found!")
             if response.status_code == 301:
-                print(Fore.YELLOW + "[d] Github: аккаунт удалён!")
+                print(Fore.YELLOW + "[d] Github: account deleted!")
             if response.status_code == 403:
-                print(Fore.RED + "[x] Github: доступ запрещён!")
+                print(Fore.RED + "[x] Github: access is denied!")
         
         except requests.ConnectionError:
-            print(Fore.RED + "[e] Github: произошла ошибка")
+            print(Fore.RED + "[e] Github: an error has occurred!")
 
-            ## WORDPRESS
+            ###################
+            ##               ##
+            ##   WORDPRESS   ##
+            ## ↓           ↓ ##
+            ###################
 
         check_Wordpress = f"https://{self.args}.wordpress.com/"
 
         try:
             response = requests.head(check_Wordpress)
             if response.status_code == 200:
-                print(Fore.GREEN + f"[+] Wordpress: аккаунт найден! " + check_Wordpress)
+                print(Fore.GREEN + f"[+] Wordpress: account found! " + check_Wordpress)
                 file.write("Wordpress: " + check_Wordpress + "\n")
             if response.status_code == 404:
-                print(Fore.YELLOW + "[-] Wordpress: аккаунт не найден!")
+                print(Fore.YELLOW + "[-] Wordpress: account not found!")
             if response.status_code == 301:
-                print(Fore.YELLOW + "[d] Wordpress: аккаунт удалён!")
+                print(Fore.YELLOW + "[d] Wordpress: account deleted!")
             if response.status_code == 403:
-                print(Fore.RED + "[x] Wordpress: доступ запрещён!")
+                print(Fore.RED + "[x] Wordpress: access is denied!")
 
         except requests.ConnectionError:
-            print(Fore.RED + "[e] Wordpress: произошла ошибка")
+            print(Fore.RED + "[e] Wordpress: an error has occurred!")
 
-            ## FLICKR
+            ##################
+            ##              ##
+            ##    FLICKR    ##
+            ## ↓          ↓ ##
+            ##################
 
         check_Flickr = f"https://www.flickr.com/photos/{self.args}/"
 
         try:
             response = requests.head(check_Flickr)
             if response.status_code == 200:
-                print(Fore.GREEN + f"[+] Flickr: аккаунт найден! " + check_Flickr)
+                print(Fore.GREEN + f"[+] Flickr: account found! " + check_Flickr)
                 file.write("Flickr: " + check_Flickr + "\n")
             if response.status_code == 404:
-                print(Fore.YELLOW + "[-] Flickr: аккаунт не найден!")
+                print(Fore.YELLOW + "[-] Flickr: account not found!")
             if response.status_code == 301:
-                print(Fore.YELLOW + "[d] Flickr: аккаунт удалён!")
+                print(Fore.YELLOW + "[d] Flickr: account deleted!")
             if response.status_code == 403:
-                print(Fore.RED + "[x] Flickr: доступ запрещён!")
+                print(Fore.RED + "[x] Flickr: access is denied!")
 
         except requests.ConnectionError:
-            print(Fore.RED + "[e] Flickr: произошла ошибка")
+            print(Fore.RED + "[e] Flickr: an error has occurred!")
 
-            ## SOUNDCLOUD
+            ##################
+            ##              ##
+            ##  SOUNDCLOUD  ##
+            ## ↓          ↓ ##
+            ##################
 
         check_Soundcloud = f"https://soundcloud.com/{self.args}/"
 
         try:
             response = requests.head(check_Soundcloud)
             if response.status_code == 200:
-                print(Fore.GREEN + f"[+] Soundcloud: аккаунт найден! " + check_Soundcloud)
+                print(Fore.GREEN + f"[+] Soundcloud: account found! " + check_Soundcloud)
                 file.write("Soundcloud: " + check_Soundcloud + "\n")
             if response.status_code == 404:
-                print(Fore.YELLOW + "[-] Soundcloud: аккаунт не найден!")
+                print(Fore.YELLOW + "[-] Soundcloud: account not found!")
             if response.status_code == 301:
-                print(Fore.YELLOW + "[d] Soundcloud: аккаунт удалён!")
+                print(Fore.YELLOW + "[d] Soundcloud: account deleted!")
             if response.status_code == 403:
-                print(Fore.RED + "[x] Soundcloud: доступ запрещён!")
+                print(Fore.RED + "[x] Soundcloud: access is denied!")
 
         except requests.ConnectionError:
-            print(Fore.RED + "[e] Soundcloud: произошла ошибка")
+            print(Fore.RED + "[e] Soundcloud: an error has occurred!")
 
-            ## PATREON
+            #################
+            ##             ##
+            ##   PATREON   ##
+            ## ↓         ↓ ##
+            #################
 
         check_Patreon = f"https://www.patreon.com/{self.args}/"
 
         try:
             response = requests.head(check_Patreon)
             if response.status_code == 200:
-                print(Fore.GREEN + f"[+] Patreon: аккаунт найден! " + check_Patreon)
+                print(Fore.GREEN + f"[+] Patreon: account found! " + check_Patreon)
                 file.write("Patreon: " + check_Patreon + "\n")
             if response.status_code == 404:
-                print(Fore.YELLOW + "[-] Patreon: аккаунт не найден!")
+                print(Fore.YELLOW + "[-] Patreon: account not found!")
             if response.status_code == 301:
-                print(Fore.YELLOW + "[d] Patreon: аккаунт удалён!")
+                print(Fore.YELLOW + "[d] Patreon: account deleted!")
             if response.status_code == 403:
-                print(Fore.RED + "[x] Patreon: доступ запрещён!")
+                print(Fore.RED + "[x] Patreon: access is denied!")
 
         except requests.ConnectionError:
-            print(Fore.RED + "[e] Patreon: произошла ошибка")
+            print(Fore.RED + "[e] Patreon: an error has occurred!")
 
-            ## IFTTT
+            #################
+            ##             ##
+            ##    IFTTT    ##
+            ## ↓         ↓ ##
+            #################
 
         check_Ifttt = f"https://www.ifttt.com/p/{self.args}/"
 
         try:
             response = requests.head(check_Ifttt)
             if response.status_code == 200:
-                print(Fore.GREEN + f"[+] Ifttt: аккаунт найден! " + check_Ifttt)
+                print(Fore.GREEN + f"[+] Ifttt: account found! " + check_Ifttt)
                 file.write("Ifttt: " + check_Ifttt + "\n")
             if response.status_code == 404:
-                print(Fore.YELLOW + "[-] Ifttt: аккаунт не найден!")
+                print(Fore.YELLOW + "[-] Ifttt: account not found!")
             if response.status_code == 301:
-                print(Fore.YELLOW + "[d] Ifttt: аккаунт удалён!")
+                print(Fore.YELLOW + "[d] Ifttt: account deleted!")
             if response.status_code == 403:
-                print(Fore.RED + "[x] Ifttt: доступ запрещён!")
+                print(Fore.RED + "[x] Ifttt: access is denied!")
 
         except requests.ConnectionError:
-            print(Fore.RED + "[e] Ifttt: произошла ошибка")
+            print(Fore.RED + "[e] Ifttt: an error has occurred!")
 
-            ## EBAY
+            ################
+            ##            ##
+            ##    EBAY    ##
+            ## ↓        ↓ ##
+            ################
 
         check_Ebay = f"https://www.ebay.com/usr/{self.args}/"
 
         try:
             response = requests.head(check_Ebay)
             if response.status_code == 200:
-                print(Fore.GREEN + f"[+] Ebay: аккаунт найден! " + check_Ebay)
+                print(Fore.GREEN + f"[+] Ebay: account found! " + check_Ebay)
                 file.write("Ebay: " + check_Ebay + "\n")
             if response.status_code == 404:
-                print(Fore.YELLOW + "[-] Ebay: аккаунт не найден!")
+                print(Fore.YELLOW + "[-] Ebay: account not found!")
             if response.status_code == 301:
-                print(Fore.YELLOW + "[d] Ebay: аккаунт удалён!")
+                print(Fore.YELLOW + "[d] Ebay: account deleted!")
             if response.status_code == 403:
-                print(Fore.RED + "[x] Ebay: доступ запрещён!")
+                print(Fore.RED + "[x] Ebay: access is denied!")
 
         except requests.ConnectionError:
-            print(Fore.RED + "[e] Ebay: произошла ошибка")
+            print(Fore.RED + "[e] Ebay: an error has occurred!")
 
-            ## TELEGRAM
+            ################
+            ##            ##
+            ##  TELEGRAM  ##
+            ## ↓        ↓ ##
+            ################
 
         check_Telegram = f"https://t.me/{self.args}/"
 
         try:
             response = requests.head(check_Telegram)
             if response.status_code == 200:
-                print(Fore.GREEN + f"[+] Telegram: аккаунт найден! " + check_Telegram)
+                print(Fore.GREEN + f"[+] Telegram: account found! " + check_Telegram)
                 file.write("Telegram: " + check_Telegram + "\n")
             if response.status_code == 404:
-                print(Fore.YELLOW + "[-] Telegram: аккаунт не найден!")
+                print(Fore.YELLOW + "[-] Telegram: account not found!")
             if response.status_code == 301:
-                print(Fore.YELLOW + "[d] Telegram: аккаунт удалён!")
+                print(Fore.YELLOW + "[d] Telegram: account deleted!")
             if response.status_code == 403:
-                print(Fore.RED + "[x] Telegram: доступ запрещён!")
+                print(Fore.RED + "[x] Telegram: access is denied!")
 
         except requests.ConnectionError:
-            print(Fore.RED + "[e] Telegram: произошла ошибка")
+            print(Fore.RED + "[e] Telegram: an error has occurred!")
 
-            ## REPLIT
+            ################
+            ##            ##
+            ##   REPLIT   ##
+            ## ↓        ↓ ##
+            ################
 
         check_Replit = f"https://replit.com/{self.args}/"
 
         try:
             response = requests.head(check_Replit)
             if response.status_code == 200:
-                print(Fore.GREEN + f"[+] Replit: аккаунт найден! " + check_Replit)
+                print(Fore.GREEN + f"[+] Replit: account found! " + check_Replit)
                 file.write("Replit: " + check_Replit + "\n")
             if response.status_code == 404:
-                print(Fore.YELLOW + "[-] Replit: аккаунт не найден!")
+                print(Fore.YELLOW + "[-] Replit: account not found!")
             if response.status_code == 301:
-                print(Fore.YELLOW + "[d] Replit: аккаунт удалён!")
+                print(Fore.YELLOW + "[d] Replit: account deleted!")
             if response.status_code == 403:
-                print(Fore.RED + "[x] Replit: доступ запрещён!")
+                print(Fore.RED + "[x] Replit: access is denied!")
 
         except requests.ConnectionError:
-            print(Fore.RED + "[e] Replit: произошла ошибка")
+            print(Fore.RED + "[e] Replit: an error has occurred!")
 
-            ## HABR
+            ################
+            ##            ##
+            ##    HABR    ##
+            ## ↓        ↓ ##
+            ################
 
         check_Habr = f"https://qna.habr.com/user/{self.args}/"
 
         try:
             response = requests.head(check_Habr)
             if response.status_code == 200:
-                print(Fore.GREEN + f"[+] Habr Q&A: аккаунт найден! " + check_Habr)
+                print(Fore.GREEN + f"[+] Habr Q&A: account found! " + check_Habr)
                 file.write("Habr Q&A: " + check_Habr + "\n")
             if response.status_code == 404:
-                print(Fore.YELLOW + "[-] Habr Q&A: аккаунт не найден!")
+                print(Fore.YELLOW + "[-] Habr Q&A: account not found!")
             if response.status_code == 301:
-                print(Fore.YELLOW + "[d] Habr Q&A: аккаунт удалён!")
+                print(Fore.YELLOW + "[d] Habr Q&A: account deleted!")
             if response.status_code == 403:
-                print(Fore.RED + "[x] Habr Q&A: доступ запрещён!")
+                print(Fore.RED + "[x] Habr Q&A: access is denied!")
 
         except requests.ConnectionError:
-            print(Fore.RED + "[e] Habr Q&A: произошла ошибка")
+            print(Fore.RED + "[e] Habr Q&A: an error has occurred!")
 
-            ## BLOGSPOT
+            ##################
+            ##              ##
+            ##   BLOGSPOT   ##
+            ## ↓          ↓ ##
+            ##################
 
         check_Blogspot = f"https://{self.args}.blogspot.com/"
 
         try:
             response = requests.head(check_Blogspot)
             if response.status_code == 200:
-                print(Fore.GREEN + f"[+] Blogspot: аккаунт найден! " + check_Blogspot)
+                print(Fore.GREEN + f"[+] Blogspot: account found! " + check_Blogspot)
                 file.write("Blogspot: " + check_Blogspot + "\n")
             if response.status_code == 404:
-                print(Fore.YELLOW + "[-] Blogspot: аккаунт не найден!")
+                print(Fore.YELLOW + "[-] Blogspot: account not found!")
             if response.status_code == 301:
-                print(Fore.YELLOW + "[d] Blogspot: аккаунт удалён!")
+                print(Fore.YELLOW + "[d] Blogspot: account deleted!")
             if response.status_code == 403:
-                print(Fore.RED + "[x] Blogspot: доступ запрещён!")
+                print(Fore.RED + "[x] Blogspot: access is denied!")
 
         except requests.ConnectionError:
-            print(Fore.RED + "[e] Blogspot: произошла ошибка")
+            print(Fore.RED + "[e] Blogspot: an error has occurred!")
 
-            ## TILDA
+            #################
+            ##             ##
+            ##    TILDA    ##
+            ## ↓         ↓ ##
+            #################
 
         check_Tilda = f"http://{self.args}.tilda.ws/"
 
         try:
             response = requests.head(check_Tilda)
             if response.status_code == 200:
-                print(Fore.GREEN + f"[+] Tilda: аккаунт найден! " + check_Tilda)
+                print(Fore.GREEN + f"[+] Tilda: account found! " + check_Tilda)
                 file.write("Tilda: " + check_Tilda + "\n")
             if response.status_code == 404:
-                print(Fore.YELLOW + "[-] Tilda: аккаунт не найден!")
+                print(Fore.YELLOW + "[-] Tilda: account not found!")
             if response.status_code == 301:
-                print(Fore.YELLOW + "[d] Tilda: аккаунт удалён!")
+                print(Fore.YELLOW + "[d] Tilda: account deleted!")
             if response.status_code == 403:
-                print(Fore.RED + "[x] Tilda: доступ запрещён!")
+                print(Fore.RED + "[x] Tilda: access is denied!")
 
         except requests.ConnectionError:
-            print(Fore.RED + "[e] Tilda: произошла ошибка")
+            print(Fore.RED + "[e] Tilda: an error has occurred!")
 
-            ## DONATIONALERTS
+            ######################
+            ##                  ##
+            ##  DONATIONALERTS  ##
+            ## ↓              ↓ ##
+            ######################
 
         check_Donationalerts = f"https://www.donationalerts.com/r/{self.args}/"
 
         try:
             response = requests.head(check_Donationalerts)
             if response.status_code == 200:
-                print(Fore.GREEN + f"[+] Donationalerts: аккаунт найден! " + check_Donationalerts)
+                print(Fore.GREEN + f"[+] Donationalerts: account found! " + check_Donationalerts)
                 file.write("Donationalerts:" + check_Donationalerts + "\n")
             if response.status_code == 404:
-                print(Fore.YELLOW + "[-] Donationalerts: аккаунт не найден!")
+                print(Fore.YELLOW + "[-] Donationalerts: account not found!")
             if response.status_code == 301:
-                print(Fore.YELLOW + "[d] Donationalerts: аккаунт удалён!")
+                print(Fore.YELLOW + "[d] Donationalerts: account deleted!")
             if response.status_code == 403:
-                print(Fore.RED + "[x] Donationalerts: доступ запрещён!")
+                print(Fore.RED + "[x] Donationalerts: access is denied!")
 
         except requests.ConnectionError:
-            print(Fore.RED + "[e] Donationalerts: произошла ошибка")
+            print(Fore.RED + "[e] Donationalerts: an error has occurred!")
 
         file.close()
 
-        print(Fore.CYAN + "\n[\] Все найденнные аккаунты сохранены:")
+        print(Fore.CYAN + "\n[\] All found accounts are saved:")
         print(Fore.CYAN + f"[\] cache\\{self.args}.txt")
 
 userfidner = userFidner()
