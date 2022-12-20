@@ -5,6 +5,12 @@ Depending on your country and region of residence, the recommendations do not wo
 
 ![image](https://github.com/Jupiter404E/User-finder/blob/main/img/preview.png?raw=true)
 
+## Download using git
+
+```
+https://github.com/Jupiter404E/User-finder.git
+```
+
 ## Usage
 
 1. If you don't have python installed, download python 3.7.6 and make sure you select the 'ADD TO PATH' option during installation.
