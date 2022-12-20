@@ -8,7 +8,7 @@ Depending on your country and region of residence, the recommendations do not wo
 ## Download using git
 
 ```
-https://github.com/Jupiter404E/User-finder.git
+git clone https://github.com/Jupiter404E/User-finder.git
 ```
 
 ## Usage
